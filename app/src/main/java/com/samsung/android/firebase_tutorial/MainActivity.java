@@ -3,6 +3,7 @@ package com.samsung.android.firebase_tutorial;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText number;
     Button send;
     Button results;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,17 @@ public class MainActivity extends AppCompatActivity {
                         });
 
             }
+        });
+
+        // On click listener to switch to results screen
+        results.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: Use the intent variable defined above to switch to the ViewResults screen
+                // initialize intent properly
+                // Switch to new screen
+            }
+
         });
     }
 }
