@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "734621414621",
+    "project_id": "tutorial-eb54c",
+    "storage_bucket": "tutorial-eb54c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734621414621:android:ee4c1fc21331627af41734",
+        "android_client_info": {
+          "package_name": "com.samsung.android.firebase_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734621414621-5esc488gk4pavsd433uiehlbs6s2ihm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApJuM2AChhBdF2113s3QZvCiU_lD6p5dE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734621414621-5esc488gk4pavsd433uiehlbs6s2ihm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
