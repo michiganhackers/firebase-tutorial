@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 // TODO: Add "Name", <Name entered> to the HashMap created above
                 // TODO: Add "Number", <Number entered> to the HashMap created above
 
-                Task<DocumentReference> documentReferenceTask = db.collection("numbers")
+                // This block of code sends the numbers to Firebase
+                // https://firebase.google.com/docs/firestore/manage-data/add-data
+                Task<DocumentReference> documentReferenceTask = db.collection("custom")
                         .add(numbers)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
