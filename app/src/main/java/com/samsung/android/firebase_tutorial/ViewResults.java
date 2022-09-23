@@ -37,13 +37,14 @@ public class ViewResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_results);
         // TODO: Add button to activity_view_results.xml and add ID to go_back variable defined above
-
+        go_back = findViewById(R.id.goBack);
         // TODO: Add ListView to activity_view_results.xml and add ID to results variable defined above
-
+        resultsView = findViewById(R.id.results);
         // TODO: Initialize arrayList
-
+        results = new ArrayList<>();
         // TODO: Initialize adapter with the ArrayList results
         // Use android.R.layout.simple_list_item_1 in your initialization
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, results);
 
 
         resultsView.setAdapter(adapter);
@@ -57,10 +58,12 @@ public class ViewResults extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 // TODO: Add the Name and Number from the document to the ArrayList
+                                results.add(document.get("Name").toString() + ":" + document.get("Number").toString());
 
                                 Log.d("success", document.getId() + " => " + document.getData());
                             }
                             // TODO: Tell the adapter the set changed
+                            adapter.notifyDataSetChanged();
                         } else {
                             Log.d("failure", "Error getting documents: ", task.getException());
                         }
@@ -73,6 +76,8 @@ public class ViewResults extends AppCompatActivity {
                 //TODO: Use the intent variable defined above to switch back to the MainActivity screen
                 // initialize intent properly
                 // Switch to MainActivity
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
 
         });

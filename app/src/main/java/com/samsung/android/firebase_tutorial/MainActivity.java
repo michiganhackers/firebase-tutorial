@@ -34,18 +34,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // TODO: Add input text objects to activity_main.xml and add their IDs here to variables defined above
+        name = findViewById(R.id.name);
+        number = findViewById(R.id.number);
 
         // TODO: Add 2 buttons to activity_main.xml and add their IDs here to variables defined above
         // One button will send data to Firebase and the other will switch to the results screen
-
+        send = findViewById(R.id.submit);
+        results = findViewById(R.id.viewResults);
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Map<String, Object> numbers = new HashMap<>();
                 // TODO: Add "Name", <Name entered> to the HashMap created above
+                numbers.put("Name",name.getText().toString());
                 // TODO: Add "Number", <Number entered> to the HashMap created above
-
+                numbers.put("Number",number.getText().toString());
                 // This block of code sends the numbers to Firebase
                 // https://firebase.google.com/docs/firestore/manage-data/add-data
                 Task<DocumentReference> documentReferenceTask = db.collection("custom")
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: Use the intent variable defined above to switch to the ViewResults screen
                 // initialize intent properly
                 // Switch to new screen
+                Intent intent = new Intent(getApplicationContext(),ViewResults.class);
+                startActivity(intent);
             }
 
         });
