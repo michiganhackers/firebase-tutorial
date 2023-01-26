@@ -49,7 +49,7 @@ public class ViewResults extends AppCompatActivity {
         resultsView.setAdapter(adapter);
         // This code gets data from Firebase
         // https://firebase.google.com/docs/firestore/query-data/get-data
-        db.collection("custom")
+        db.collection("winter2023")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

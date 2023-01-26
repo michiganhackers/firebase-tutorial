@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // This block of code sends the numbers to Firebase
                 // https://firebase.google.com/docs/firestore/manage-data/add-data
-                Task<DocumentReference> documentReferenceTask = db.collection("custom")
+                Task<DocumentReference> documentReferenceTask = db.collection("winter2023")
                         .add(numbers)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
