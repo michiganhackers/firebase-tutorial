@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,12 +55,16 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d("Success", "DocumentSnapshot written with ID: " + documentReference.getId());
+                                Toast result = Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG);
+                                result.show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w("Failure", "Error adding document", e);
+                                Toast result = Toast.makeText(getApplicationContext(), "Error connecting to firebase", Toast.LENGTH_LONG);
+                                result.show();
                             }
                         });
 
